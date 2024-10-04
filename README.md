@@ -1,40 +1,40 @@
 Step 1: Install the Required Package
 Use the following Composer command to install the PhpSpreadsheet library:
 
-bash
-Copy code
+```php
 composer require phpoffice/phpspreadsheet
+```
 This will add PhpSpreadsheet to your Laravel project and allow you to use the classes you mentioned, such as PhpOffice\PhpSpreadsheet\Writer\Csv and PhpOffice\PhpSpreadsheet\Spreadsheet.
 
 2.Enable ZIP Extension
 PhpSpreadsheet requires the PHP zip extension to be enabled for Excel file handling. To enable it, ensure that this line is uncommented in your php.ini:
 
-ini
-Copy code
+```php
 extension=zip
+```
 Enable GD or Imagick Extension (for Images in Excel Files)
 If you are working with images in Excel files, you will need either GD or Imagick extension enabled:
 
-ini
-Copy code
+```php
 extension=gd
 ; OR
 extension=imagick
+```
 Increase Memory Limit
 Large files may require more memory to be processed. Increase the memory limit:
 
-ini
-Copy code
+```php
 memory_limit = 256M
+```
 You can set it to a higher value like 512M or 1G if you’re dealing with really large files.
 
 Set Upload File Size Limit
 If you are importing files, you may need to allow larger file uploads:
 
-ini
-Copy code
+```php
 upload_max_filesize = 50M
 post_max_size = 50M
+```
 Set these to values that suit your file size requirements.
 
 <h3>composer require maatwebsite/excel:"^1.1" phpoffice/phpspreadsheet:"1.28"
