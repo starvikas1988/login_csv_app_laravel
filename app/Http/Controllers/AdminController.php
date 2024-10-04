@@ -12,6 +12,7 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Writer\Csv;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 // use App\Exports\UsersExport;
 // use App\Imports\UsersImport;
@@ -22,6 +23,17 @@ class AdminController extends Controller
     {
         $users = User::with('hobbies')->get();
         return view('admin.dashboard', compact('users'));
+    }
+
+    public function exportPdf()
+    {
+        $users = User::with('hobbies')->get();
+
+        // Load view and pass data to generate PDF
+        $pdf = PDF::loadView('admin.pdf.users', compact('users'));
+
+        // Return the PDF for download
+        return $pdf->download('users.pdf');
     }
 
     public function exportCsv()
