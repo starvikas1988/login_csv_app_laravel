@@ -39,6 +39,34 @@ Set these to values that suit your file size requirements.
 
 <h3>composer require maatwebsite/excel:"^1.1" phpoffice/phpspreadsheet:"1.28"
 </h3>
+<h2>For pdf format download file</h2>
+Step: Verify DOMPDF Installation
+If the above steps still result in the error, verify the package is installed correctly by running:
+
+```php
+composer show barryvdh/laravel-dompdf
+```
+This should display information about the installed package. If not, try reinstalling the package:
+
+```php
+composer remove barryvdh/laravel-dompdf
+composer require barryvdh/laravel-dompdf
+```
+```php
+php artisan config:clear
+php artisan cache:clear
+php artisan config:cache
+```
+Step 6: Test a Simple PDF
+```php
+use Barryvdh\DomPDF\Facade\Pdf;  // Correctly import the facade
+
+public function testPdf()
+{
+    $pdf = Pdf::loadHTML('<h1>Testing PDF</h1>');
+    return $pdf->download('test.pdf');
+}
+```
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
