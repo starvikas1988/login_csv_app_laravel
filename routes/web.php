@@ -22,6 +22,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/users/csv', [AdminController::class, 'exportCsv'])->name('admin.users.csv');
     Route::post('/admin/users/upload_csv', [AdminController::class, 'uploadCsv'])->name('admin.users.upload_csv');
+    Route::get('/admin/export-pdf', [AdminController::class, 'exportPdf'])->name('admin.export.pdf');
 });
 
 Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard')->middleware(['auth', 'user']);
