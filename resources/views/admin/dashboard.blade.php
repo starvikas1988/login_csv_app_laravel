@@ -44,6 +44,7 @@
                 </table>
 
                 <a href="{{ route('admin.users.csv') }}" class="btn btn-success">Download CSV</a>
+                <a href="{{ route('admin.export.pdf') }}" class="btn btn-success">Download Pdf</a>
 
                 <h5 class="mt-4">Upload CSV</h5>
                 <form action="{{ route('admin.users.upload_csv') }}" method="POST" enctype="multipart/form-data">
