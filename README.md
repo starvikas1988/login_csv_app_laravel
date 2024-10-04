@@ -1,3 +1,10 @@
+To set up authentication in Laravel 11, you can use the following Artisan command:
+
+```php
+php artisan make:auth
+```
+This command will generate the necessary views and routes for authentication.
+
 Step 1: Install the Required Package
 Use the following Composer command to install the PhpSpreadsheet library:
 
