@@ -1,3 +1,5 @@
+https://chatgpt.com/share/67135c76-31b4-800d-9518-de89803e8987
+
 To set up authentication in Laravel 11, you can use the following Artisan command:
 
 ```php
